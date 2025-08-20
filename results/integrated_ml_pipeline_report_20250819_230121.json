@@ -1,0 +1,712 @@
+{
+  "experiment_info": {
+    "timestamp": "20250819_230121",
+    "notebook_type": "Integrated Fear & Greed ML Pipeline",
+    "feature_store_available": true,
+    "automl_available": true,
+    "flaml_available": true
+  },
+  "configuration": {
+    "versions": [
+      "v1",
+      "v2",
+      "v3"
+    ],
+    "tasks": [
+      "classification",
+      "regression"
+    ],
+    "time_budget_per_experiment": 180
+  },
+  "summary_statistics": [
+    {
+      "version": "v1",
+      "task": "classification",
+      "best_model": "sklearn",
+      "n_features": 20,
+      "train_samples": 657,
+      "test_samples": 220,
+      "test_metric": 0.6454545454545455,
+      "metric_name": "Accuracy",
+      "duration_sec": 183.299569,
+      "flaml_available": true
+    },
+    {
+      "version": "v1",
+      "task": "regression",
+      "best_model": "sklearn",
+      "n_features": 20,
+      "train_samples": 657,
+      "test_samples": 220,
+      "test_metric": 0.20588204500368423,
+      "metric_name": "R\u00b2",
+      "duration_sec": 187.088638,
+      "flaml_available": true
+    },
+    {
+      "version": "v2",
+      "task": "classification",
+      "best_model": "flaml",
+      "n_features": 30,
+      "train_samples": 657,
+      "test_samples": 220,
+      "test_metric": 0.8636363636363636,
+      "metric_name": "Accuracy",
+      "duration_sec": 184.060938,
+      "flaml_available": true
+    },
+    {
+      "version": "v2",
+      "task": "regression",
+      "best_model": "sklearn",
+      "n_features": 30,
+      "train_samples": 657,
+      "test_samples": 220,
+      "test_metric": 0.29468369107942005,
+      "metric_name": "R\u00b2",
+      "duration_sec": 187.049251,
+      "flaml_available": true
+    },
+    {
+      "version": "v3",
+      "task": "classification",
+      "best_model": "sklearn",
+      "n_features": 50,
+      "train_samples": 657,
+      "test_samples": 220,
+      "test_metric": 0.9136363636363637,
+      "metric_name": "Accuracy",
+      "duration_sec": 184.186407,
+      "flaml_available": true
+    },
+    {
+      "version": "v3",
+      "task": "regression",
+      "best_model": "sklearn",
+      "n_features": 50,
+      "train_samples": 657,
+      "test_samples": 220,
+      "test_metric": 0.3906945031288449,
+      "metric_name": "R\u00b2",
+      "duration_sec": 189.261501,
+      "flaml_available": true
+    }
+  ],
+  "detailed_results": {
+    "v1_classification": {
+      "experiment_name": "v1_classification",
+      "version": "v1",
+      "task_type": "classification",
+      "best_source": "sklearn",
+      "sklearn_results": [
+        {
+          "model_name": "random_forest",
+          "train_accuracy": 1.0,
+          "val_accuracy": 0.8954545454545455,
+          "precision": 0.8886059846586162,
+          "recall": 0.8486077729271922,
+          "f1_score": 0.8668571473735792
+        },
+        {
+          "model_name": "logistic_regression",
+          "train_accuracy": 0.8964992389649924,
+          "val_accuracy": 0.8909090909090909,
+          "precision": 0.8919671094244149,
+          "recall": 0.8331256846683344,
+          "f1_score": 0.8588882084779207
+        },
+        {
+          "model_name": "mlp",
+          "train_accuracy": 1.0,
+          "val_accuracy": 0.8772727272727273,
+          "precision": 0.8691802820835078,
+          "recall": 0.8199931328787953,
+          "f1_score": 0.8414777653908089
+        },
+        {
+          "model_name": "svm",
+          "train_accuracy": 0.9193302891933028,
+          "val_accuracy": 0.8727272727272727,
+          "precision": 0.8725237141291693,
+          "recall": 0.8042739654354899,
+          "f1_score": 0.8338292222542151
+        }
+      ],
+      "flaml_available": true,
+      "flaml_results": {
+        "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+        "best_estimator": "rf",
+        "best_config": {
+          "n_estimators": 26,
+          "max_features": 0.3070799611869398,
+          "max_leaves": 37,
+          "criterion": "entropy"
+        },
+        "val_score": 0.8772727272727273
+      },
+      "test_results": {
+        "test_accuracy": 0.6454545454545455,
+        "precision": 0.666501224273708,
+        "recall": 0.6354066985645933,
+        "f1_score": 0.44867324033990696,
+        "classification_report": {
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.22727272727272727,
+            "f1-score": 0.37037037037037035,
+            "support": 22.0
+          },
+          "greed": {
+            "precision": 0.11594202898550725,
+            "recall": 1.0,
+            "f1-score": 0.2077922077922078,
+            "support": 8.0
+          },
+          "stable": {
+            "precision": 0.8835616438356164,
+            "recall": 0.6789473684210526,
+            "f1-score": 0.7678571428571429,
+            "support": 190.0
+          },
+          "accuracy": 0.6454545454545455,
+          "macro avg": {
+            "precision": 0.666501224273708,
+            "recall": 0.6354066985645933,
+            "f1-score": 0.44867324033990696,
+            "support": 220.0
+          },
+          "weighted avg": {
+            "precision": 0.8672920389120509,
+            "recall": 0.6454545454545455,
+            "f1-score": 0.7077424679697406,
+            "support": 220.0
+          }
+        }
+      },
+      "data_info": {
+        "n_features": 20,
+        "train_samples": 657,
+        "val_samples": 220,
+        "test_samples": 220
+      }
+    },
+    "v1_regression": {
+      "experiment_name": "v1_regression",
+      "version": "v1",
+      "task_type": "regression",
+      "best_source": "sklearn",
+      "sklearn_results": [
+        {
+          "model_name": "random_forest",
+          "train_r2": 0.9884334798634665,
+          "val_r2": 0.9042375505305823,
+          "train_rmse": 0.5768000618124183,
+          "val_rmse": 1.6809618095536234
+        },
+        {
+          "model_name": "ridge",
+          "train_r2": 0.8264563267205021,
+          "val_r2": 0.8062124144459235,
+          "train_rmse": 2.2342323302302183,
+          "val_rmse": 2.3912401794201044
+        },
+        {
+          "model_name": "mlp",
+          "train_r2": 0.9808893531222819,
+          "val_r2": 0.8854748168665677,
+          "train_rmse": 0.7414154519911991,
+          "val_rmse": 1.8382760160553209
+        },
+        {
+          "model_name": "svr",
+          "train_r2": 0.844587564749061,
+          "val_r2": 0.8124126780249176,
+          "train_rmse": 2.114301033012578,
+          "val_rmse": 2.352675149712399
+        }
+      ],
+      "flaml_available": true,
+      "flaml_results": {
+        "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+        "best_estimator": "xgboost",
+        "best_config": {
+          "n_estimators": 254,
+          "max_leaves": 20,
+          "min_child_weight": 4.002216257192875,
+          "learning_rate": 0.05229982882689108,
+          "subsample": 0.9822296394489315,
+          "colsample_bylevel": 1.0,
+          "colsample_bytree": 0.8009793559735034,
+          "reg_alpha": 0.006526424815725266,
+          "reg_lambda": 0.0925162070287
+        },
+        "val_score": 0.9167444418147582
+      },
+      "test_results": {
+        "test_r2": 0.20588204500368423,
+        "test_rmse": 4.976501478781622
+      },
+      "data_info": {
+        "n_features": 20,
+        "train_samples": 657,
+        "val_samples": 220,
+        "test_samples": 220
+      }
+    },
+    "v2_classification": {
+      "experiment_name": "v2_classification",
+      "version": "v2",
+      "task_type": "classification",
+      "best_source": "flaml",
+      "sklearn_results": [
+        {
+          "model_name": "random_forest",
+          "train_accuracy": 1.0,
+          "val_accuracy": 0.9045454545454545,
+          "precision": 0.9068707028265851,
+          "recall": 0.8532054740766175,
+          "f1_score": 0.8771922504929242
+        },
+        {
+          "model_name": "logistic_regression",
+          "train_accuracy": 0.9162861491628614,
+          "val_accuracy": 0.9045454545454545,
+          "precision": 0.8898976375756562,
+          "recall": 0.8730988701950589,
+          "f1_score": 0.8805536594615093
+        },
+        {
+          "model_name": "mlp",
+          "train_accuracy": 1.0,
+          "val_accuracy": 0.8818181818181818,
+          "precision": 0.8734734734734735,
+          "recall": 0.8290021418878043,
+          "f1_score": 0.8474408083567183
+        },
+        {
+          "model_name": "svm",
+          "train_accuracy": 0.9178082191780822,
+          "val_accuracy": 0.8954545454545455,
+          "precision": 0.8880287840814156,
+          "recall": 0.8488448521116397,
+          "f1_score": 0.8667267352713361
+        }
+      ],
+      "flaml_available": true,
+      "flaml_results": {
+        "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+        "best_estimator": "rf",
+        "best_config": {
+          "n_estimators": 124,
+          "max_features": 0.15196148796884026,
+          "max_leaves": 148,
+          "criterion": "gini"
+        },
+        "val_score": 0.9090909090909091
+      },
+      "test_results": {
+        "test_accuracy": 0.8636363636363636,
+        "precision": 0.2878787878787879,
+        "recall": 0.3333333333333333,
+        "f1_score": 0.3089430894308943,
+        "classification_report": {
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 22.0
+          },
+          "greed": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 8.0
+          },
+          "stable": {
+            "precision": 0.8636363636363636,
+            "recall": 1.0,
+            "f1-score": 0.926829268292683,
+            "support": 190.0
+          },
+          "accuracy": 0.8636363636363636,
+          "macro avg": {
+            "precision": 0.2878787878787879,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3089430894308943,
+            "support": 220.0
+          },
+          "weighted avg": {
+            "precision": 0.7458677685950413,
+            "recall": 0.8636363636363636,
+            "f1-score": 0.8004434589800443,
+            "support": 220.0
+          }
+        }
+      },
+      "data_info": {
+        "n_features": 30,
+        "train_samples": 657,
+        "val_samples": 220,
+        "test_samples": 220
+      }
+    },
+    "v2_regression": {
+      "experiment_name": "v2_regression",
+      "version": "v2",
+      "task_type": "regression",
+      "best_source": "sklearn",
+      "sklearn_results": [
+        {
+          "model_name": "random_forest",
+          "train_r2": 0.9897636629702165,
+          "val_r2": 0.9180655074340721,
+          "train_rmse": 0.542620537692682,
+          "val_rmse": 1.5548682939492005
+        },
+        {
+          "model_name": "ridge",
+          "train_r2": 0.8962917832120046,
+          "val_r2": 0.8801074694019867,
+          "train_rmse": 1.7271518517023485,
+          "val_rmse": 1.880859205754514
+        },
+        {
+          "model_name": "mlp",
+          "train_r2": 0.9823123651472907,
+          "val_r2": 0.8959057965737949,
+          "train_rmse": 0.7132779869618552,
+          "val_rmse": 1.752562426792379
+        },
+        {
+          "model_name": "svr",
+          "train_r2": 0.8698818875617758,
+          "val_r2": 0.8358349214859011,
+          "train_rmse": 1.9346072741720919,
+          "val_rmse": 2.2009015329530257
+        }
+      ],
+      "flaml_available": true,
+      "flaml_results": {
+        "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+        "best_estimator": "lgbm",
+        "best_config": {
+          "n_estimators": 86,
+          "num_leaves": 21,
+          "min_child_samples": 3,
+          "learning_rate": 0.10960516614832329,
+          "log_max_bin": 8,
+          "colsample_bytree": 0.9743381896390885,
+          "reg_alpha": 0.09105575636745025,
+          "reg_lambda": 0.007887604254608733
+        },
+        "val_score": 0.9215385663742599
+      },
+      "test_results": {
+        "test_r2": 0.29468369107942005,
+        "test_rmse": 4.6900080995942055
+      },
+      "data_info": {
+        "n_features": 30,
+        "train_samples": 657,
+        "val_samples": 220,
+        "test_samples": 220
+      }
+    },
+    "v3_classification": {
+      "experiment_name": "v3_classification",
+      "version": "v3",
+      "task_type": "classification",
+      "best_source": "sklearn",
+      "sklearn_results": [
+        {
+          "model_name": "random_forest",
+          "train_accuracy": 1.0,
+          "val_accuracy": 0.9,
+          "precision": 0.8975044563279857,
+          "recall": 0.8509066235019048,
+          "f1_score": 0.872105113904906
+        },
+        {
+          "model_name": "logistic_regression",
+          "train_accuracy": 0.9269406392694064,
+          "val_accuracy": 0.9090909090909091,
+          "precision": 0.9035153134101321,
+          "recall": 0.8686875623354752,
+          "f1_score": 0.8848848848848849
+        },
+        {
+          "model_name": "mlp",
+          "train_accuracy": 1.0,
+          "val_accuracy": 0.8681818181818182,
+          "precision": 0.8523391812865496,
+          "recall": 0.8156325109138177,
+          "f1_score": 0.8303281177790982
+        },
+        {
+          "model_name": "svm",
+          "train_accuracy": 0.9223744292237442,
+          "val_accuracy": 0.8818181818181818,
+          "precision": 0.8677611441927765,
+          "recall": 0.8352381419532054,
+          "f1_score": 0.8503503503503503
+        }
+      ],
+      "flaml_available": true,
+      "flaml_results": {
+        "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+        "best_estimator": "lgbm",
+        "best_config": {
+          "n_estimators": 79,
+          "num_leaves": 7,
+          "min_child_samples": 5,
+          "learning_rate": 0.0832442535469881,
+          "log_max_bin": 5,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.0034262730800766975,
+          "reg_lambda": 0.017651191736792526
+        },
+        "val_score": 0.9090909090909091
+      },
+      "test_results": {
+        "test_accuracy": 0.9136363636363637,
+        "precision": 0.751314854299929,
+        "recall": 0.6066188197767145,
+        "f1_score": 0.660440393176966,
+        "classification_report": {
+          "fear": {
+            "precision": 0.9285714285714286,
+            "recall": 0.5909090909090909,
+            "f1-score": 0.7222222222222222,
+            "support": 22.0
+          },
+          "greed": {
+            "precision": 0.4,
+            "recall": 0.25,
+            "f1-score": 0.3076923076923077,
+            "support": 8.0
+          },
+          "stable": {
+            "precision": 0.9253731343283582,
+            "recall": 0.9789473684210527,
+            "f1-score": 0.9514066496163683,
+            "support": 190.0
+          },
+          "accuracy": 0.9136363636363637,
+          "macro avg": {
+            "precision": 0.751314854299929,
+            "recall": 0.6066188197767145,
+            "f1-score": 0.660440393176966,
+            "support": 220.0
+          },
+          "weighted avg": {
+            "precision": 0.9065884861407251,
+            "recall": 0.9136363636363637,
+            "f1-score": 0.9050804126251698,
+            "support": 220.0
+          }
+        }
+      },
+      "data_info": {
+        "n_features": 50,
+        "train_samples": 657,
+        "val_samples": 220,
+        "test_samples": 220
+      }
+    },
+    "v3_regression": {
+      "experiment_name": "v3_regression",
+      "version": "v3",
+      "task_type": "regression",
+      "best_source": "sklearn",
+      "sklearn_results": [
+        {
+          "model_name": "random_forest",
+          "train_r2": 0.9917908668353614,
+          "val_r2": 0.9303668494211195,
+          "train_rmse": 0.4859287439180906,
+          "val_rmse": 1.4334027926952413
+        },
+        {
+          "model_name": "ridge",
+          "train_r2": 0.9176587749803915,
+          "val_r2": 0.9021242970965453,
+          "train_rmse": 1.5389786715364273,
+          "val_rmse": 1.699408047650025
+        },
+        {
+          "model_name": "mlp",
+          "train_r2": 0.9924741576059142,
+          "val_r2": 0.9124221903997028,
+          "train_rmse": 0.465266194647938,
+          "val_rmse": 1.6075232501777763
+        },
+        {
+          "model_name": "svr",
+          "train_r2": 0.8724169566141317,
+          "val_r2": 0.8322579602062983,
+          "train_rmse": 1.9156687642772692,
+          "val_rmse": 2.224749836269988
+        }
+      ],
+      "flaml_available": true,
+      "flaml_results": {
+        "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+        "best_estimator": "xgboost",
+        "best_config": {
+          "n_estimators": 268,
+          "max_leaves": 19,
+          "min_child_weight": 0.6550651699909178,
+          "learning_rate": 0.10958794110030111,
+          "subsample": 0.8962485919075192,
+          "colsample_bylevel": 0.9037265402052423,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.004829026941830133,
+          "reg_lambda": 0.018343133994003433
+        },
+        "val_score": 0.9429533056503091
+      },
+      "test_results": {
+        "test_r2": 0.3906945031288449,
+        "test_rmse": 4.359123544285719
+      },
+      "data_info": {
+        "n_features": 50,
+        "train_samples": 657,
+        "val_samples": 220,
+        "test_samples": 220
+      }
+    }
+  },
+  "feature_info": {
+    "v1": {
+      "local_name": "fear_greed_v1_20250819_212604",
+      "features": [
+        "SPY_Price_ret_pct",
+        "QQQ_Price_ret_pct",
+        "GLD_Price_ret_pct",
+        "HYG_Price_ret_pct",
+        "TLT_Price_ret_pct",
+        "SPY_Volatility",
+        "SPY_Volume",
+        "QQQ_Volatility",
+        "QQQ_Volume",
+        "GLD_Volatility",
+        "GLD_Volume",
+        "HYG_Volatility",
+        "HYG_Volume",
+        "TLT_Volume",
+        "TLT_Volatility",
+        "CPIAUCSL",
+        "HOUST",
+        "BAMLH0A0HYM2",
+        "DGS10",
+        "UMCSENT"
+      ],
+      "num_features": 20,
+      "gcp_paths": {
+        "gcs_path": "gs://mlo-project-finance-indicator-ml-data/data/fear_greed_v1.parquet",
+        "bq_table": "mlo-project-finance-indicator.fear_greed_ml.fear_greed_v1"
+      }
+    },
+    "v2": {
+      "local_name": "fear_greed_v2_20250819_212609",
+      "features": [
+        "SPY_Price_ret_pct",
+        "QQQ_Price_ret_pct",
+        "GLD_Price_ret_pct",
+        "HYG_Price_ret_pct",
+        "TLT_Price_ret_pct",
+        "SPY_Volatility",
+        "SPY_Volume",
+        "QQQ_Volatility",
+        "QQQ_Volume",
+        "GLD_Volatility",
+        "GLD_Volume",
+        "HYG_Volatility",
+        "HYG_Volume",
+        "TLT_Volume",
+        "TLT_Volatility",
+        "CPIAUCSL",
+        "HOUST",
+        "BAMLH0A0HYM2",
+        "DGS10",
+        "UMCSENT",
+        "SPY_Price_ma7",
+        "SPY_Price_ma30",
+        "QQQ_Price_ma7",
+        "QQQ_Price_ma30",
+        "GLD_Price_ma7",
+        "GLD_Price_ma30",
+        "HYG_Price_ma7",
+        "HYG_Price_ma30",
+        "TLT_Price_ma7",
+        "TLT_Price_ma30"
+      ],
+      "num_features": 30,
+      "gcp_paths": {
+        "gcs_path": "gs://mlo-project-finance-indicator-ml-data/data/fear_greed_v2.parquet",
+        "bq_table": "mlo-project-finance-indicator.fear_greed_ml.fear_greed_v2"
+      }
+    },
+    "v3": {
+      "local_name": "fear_greed_v3_20250819_212612",
+      "features": [
+        "SPY_Price_ret_pct",
+        "QQQ_Price_ret_pct",
+        "GLD_Price_ret_pct",
+        "HYG_Price_ret_pct",
+        "TLT_Price_ret_pct",
+        "SPY_Volatility",
+        "SPY_Volume",
+        "QQQ_Volatility",
+        "QQQ_Volume",
+        "GLD_Volatility",
+        "GLD_Volume",
+        "HYG_Volatility",
+        "HYG_Volume",
+        "TLT_Volume",
+        "TLT_Volatility",
+        "CPIAUCSL",
+        "HOUST",
+        "BAMLH0A0HYM2",
+        "DGS10",
+        "UMCSENT",
+        "SPY_Price_ma7",
+        "SPY_Price_ma30",
+        "QQQ_Price_ma7",
+        "QQQ_Price_ma30",
+        "GLD_Price_ma7",
+        "GLD_Price_ma30",
+        "HYG_Price_ma7",
+        "HYG_Price_ma30",
+        "TLT_Price_ma7",
+        "TLT_Price_ma30",
+        "ratio_SPY_Price_over_QQQ_Price",
+        "ratio_SPY_Price_over_GLD_Price",
+        "ratio_SPY_Price_over_HYG_Price",
+        "ratio_SPY_Price_over_TLT_Price",
+        "ratio_QQQ_Price_over_GLD_Price",
+        "ratio_QQQ_Price_over_HYG_Price",
+        "ratio_QQQ_Price_over_TLT_Price",
+        "ratio_GLD_Price_over_HYG_Price",
+        "ratio_GLD_Price_over_TLT_Price",
+        "ratio_HYG_Price_over_TLT_Price",
+        "ratio_SPY_Volume_over_QQQ_Volume",
+        "ratio_SPY_Volume_over_GLD_Volume",
+        "ratio_SPY_Volume_over_HYG_Volume",
+        "ratio_SPY_Volume_over_TLT_Volume",
+        "ratio_QQQ_Volume_over_GLD_Volume",
+        "ratio_QQQ_Volume_over_HYG_Volume",
+        "ratio_QQQ_Volume_over_TLT_Volume",
+        "ratio_GLD_Volume_over_HYG_Volume",
+        "ratio_GLD_Volume_over_TLT_Volume",
+        "ratio_HYG_Volume_over_TLT_Volume"
+      ],
+      "num_features": 50,
+      "gcp_paths": {
+        "gcs_path": "gs://mlo-project-finance-indicator-ml-data/data/fear_greed_v3.parquet",
+        "bq_table": "mlo-project-finance-indicator.fear_greed_ml.fear_greed_v3"
+      }
+    }
+  }
+}

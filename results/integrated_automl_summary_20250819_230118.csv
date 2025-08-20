@@ -1,0 +1,7 @@
+version,task,best_model,n_features,train_samples,test_samples,test_metric,metric_name,duration_sec,flaml_available
+v1,classification,sklearn,20,657,220,0.6454545454545455,Accuracy,183.299569,True
+v1,regression,sklearn,20,657,220,0.20588204500368423,R²,187.088638,True
+v2,classification,flaml,30,657,220,0.8636363636363636,Accuracy,184.060938,True
+v2,regression,sklearn,30,657,220,0.29468369107942005,R²,187.049251,True
+v3,classification,sklearn,50,657,220,0.9136363636363637,Accuracy,184.186407,True
+v3,regression,sklearn,50,657,220,0.3906945031288449,R²,189.261501,True

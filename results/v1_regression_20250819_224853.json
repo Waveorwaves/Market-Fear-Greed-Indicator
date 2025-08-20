@@ -1,0 +1,63 @@
+{
+  "experiment_name": "v1_regression",
+  "version": "v1",
+  "task_type": "regression",
+  "best_source": "sklearn",
+  "sklearn_results": [
+    {
+      "model_name": "random_forest",
+      "train_r2": 0.9884334798634665,
+      "val_r2": 0.9042375505305823,
+      "train_rmse": 0.5768000618124183,
+      "val_rmse": 1.6809618095536234
+    },
+    {
+      "model_name": "ridge",
+      "train_r2": 0.8264563267205021,
+      "val_r2": 0.8062124144459235,
+      "train_rmse": 2.2342323302302183,
+      "val_rmse": 2.3912401794201044
+    },
+    {
+      "model_name": "mlp",
+      "train_r2": 0.9808893531222819,
+      "val_r2": 0.8854748168665677,
+      "train_rmse": 0.7414154519911991,
+      "val_rmse": 1.8382760160553209
+    },
+    {
+      "model_name": "svr",
+      "train_r2": 0.844587564749061,
+      "val_r2": 0.8124126780249176,
+      "train_rmse": 2.114301033012578,
+      "val_rmse": 2.352675149712399
+    }
+  ],
+  "flaml_available": true,
+  "flaml_results": {
+    "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+    "best_estimator": "xgboost",
+    "best_config": {
+      "n_estimators": 254,
+      "max_leaves": 20,
+      "min_child_weight": 4.002216257192875,
+      "learning_rate": 0.05229982882689108,
+      "subsample": 0.9822296394489315,
+      "colsample_bylevel": 1.0,
+      "colsample_bytree": 0.8009793559735034,
+      "reg_alpha": 0.006526424815725266,
+      "reg_lambda": 0.0925162070287
+    },
+    "val_score": 0.9167444418147582
+  },
+  "test_results": {
+    "test_r2": 0.20588204500368423,
+    "test_rmse": 4.976501478781622
+  },
+  "data_info": {
+    "n_features": 20,
+    "train_samples": 657,
+    "val_samples": 220,
+    "test_samples": 220
+  }
+}
