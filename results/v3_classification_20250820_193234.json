@@ -1,0 +1,101 @@
+{
+  "experiment_name": "v3_classification",
+  "version": "v3",
+  "task_type": "classification",
+  "best_source": "sklearn",
+  "sklearn_results": [
+    {
+      "model_name": "random_forest",
+      "train_accuracy": 1.0,
+      "val_accuracy": 0.9,
+      "precision": 0.8975044563279857,
+      "recall": 0.8509066235019048,
+      "f1_score": 0.872105113904906
+    },
+    {
+      "model_name": "logistic_regression",
+      "train_accuracy": 0.9269406392694064,
+      "val_accuracy": 0.9090909090909091,
+      "precision": 0.9035153134101321,
+      "recall": 0.8686875623354752,
+      "f1_score": 0.8848848848848849
+    },
+    {
+      "model_name": "mlp",
+      "train_accuracy": 1.0,
+      "val_accuracy": 0.8681818181818182,
+      "precision": 0.8523391812865496,
+      "recall": 0.8156325109138177,
+      "f1_score": 0.8303281177790982
+    },
+    {
+      "model_name": "svm",
+      "train_accuracy": 0.9223744292237442,
+      "val_accuracy": 0.8818181818181818,
+      "precision": 0.8677611441927765,
+      "recall": 0.8352381419532054,
+      "f1_score": 0.8503503503503503
+    }
+  ],
+  "flaml_available": true,
+  "flaml_results": {
+    "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+    "best_estimator": "lgbm",
+    "best_config": {
+      "n_estimators": 79,
+      "num_leaves": 7,
+      "min_child_samples": 5,
+      "learning_rate": 0.0832442535469881,
+      "log_max_bin": 5,
+      "colsample_bytree": 1.0,
+      "reg_alpha": 0.0034262730800766975,
+      "reg_lambda": 0.017651191736792526
+    },
+    "val_score": 0.9090909090909091
+  },
+  "test_results": {
+    "test_accuracy": 0.9136363636363637,
+    "precision": 0.751314854299929,
+    "recall": 0.6066188197767145,
+    "f1_score": 0.660440393176966,
+    "classification_report": {
+      "fear": {
+        "precision": 0.9285714285714286,
+        "recall": 0.5909090909090909,
+        "f1-score": 0.7222222222222222,
+        "support": 22.0
+      },
+      "greed": {
+        "precision": 0.4,
+        "recall": 0.25,
+        "f1-score": 0.3076923076923077,
+        "support": 8.0
+      },
+      "stable": {
+        "precision": 0.9253731343283582,
+        "recall": 0.9789473684210527,
+        "f1-score": 0.9514066496163683,
+        "support": 190.0
+      },
+      "accuracy": 0.9136363636363637,
+      "macro avg": {
+        "precision": 0.751314854299929,
+        "recall": 0.6066188197767145,
+        "f1-score": 0.660440393176966,
+        "support": 220.0
+      },
+      "weighted avg": {
+        "precision": 0.9065884861407251,
+        "recall": 0.9136363636363637,
+        "f1-score": 0.9050804126251698,
+        "support": 220.0
+      }
+    }
+  },
+  "data_info": {
+    "n_features": 50,
+    "train_samples": 657,
+    "val_samples": 220,
+    "test_samples": 220
+  }
+}

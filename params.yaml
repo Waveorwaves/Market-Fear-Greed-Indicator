@@ -1,0 +1,46 @@
+data_split:
+  train_ratio: 0.8
+  random_state: 42
+  chronological: true
+
+feature_engineering:
+  v1:
+    type: "percentage_returns"
+    exclude_columns: ["VIX_Price"]  # Avoid data leakage
+  v2:
+    moving_averages: [7, 30]
+    price_columns: ["SPY_Price", "QQQ_Price", "GLD_Price", "HYG_Price", "TLT_Price"]
+  v3:
+    ratios:
+      price_ratios: true
+      volume_ratios: true
+      volatility_ratios: false
+
+model_training:
+  algorithms:
+    - ridge_regression
+    - random_forest
+    - histogram_gradient_boosting
+  
+  hyperparameters:
+    ridge:
+      alpha: 1.0
+    random_forest:
+      n_estimators: 400
+      max_depth: null
+    histogram_gb:
+      learning_rate: 0.05
+      max_iter: 500
+
+  evaluation:
+    test_size: 0.3
+    cross_validation: 5
+    metrics: ["rmse", "mae", "r2", "accuracy", "f1_macro"]
+
+target_engineering:
+  vix_thresholds:
+    method: "statistical"  # mean ± std
+    sentiment_mapping:
+      fear: "vix > mean + std"
+      stable: "mean - std <= vix <= mean + std" 
+      greed: "vix < mean - std"

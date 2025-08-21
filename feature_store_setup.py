@@ -26,7 +26,7 @@ class FearGreedFeatureStore:
         self.feature_versions = {}
         
         # Load existing dataset
-        self.dataset_path = Path("Market-Fear-Greed-Indicator/Data.csv")
+        self.dataset_path = Path("data/Data.csv")
         self.feature_summary_path = self.data_dir / "processed" / "feature_summary.csv"
         
     def load_base_dataset(self) -> pd.DataFrame:

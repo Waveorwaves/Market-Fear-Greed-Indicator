@@ -1,0 +1,7 @@
+version,task,best_model,n_features,train_samples,test_samples,test_metric,metric_name,duration_sec,flaml_available
+v1,classification,FAILED,0,0,0,0.0,N/A,0.0,False
+v1,regression,FAILED,0,0,0,0.0,N/A,0.0,False
+v2,classification,FAILED,0,0,0,0.0,N/A,0.0,False
+v2,regression,FAILED,0,0,0,0.0,N/A,0.0,False
+v3,classification,FAILED,0,0,0,0.0,N/A,0.0,False
+v3,regression,FAILED,0,0,0,0.0,N/A,0.0,False

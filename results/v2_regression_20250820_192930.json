@@ -1,0 +1,62 @@
+{
+  "experiment_name": "v2_regression",
+  "version": "v2",
+  "task_type": "regression",
+  "best_source": "sklearn",
+  "sklearn_results": [
+    {
+      "model_name": "random_forest",
+      "train_r2": 0.9897636629702165,
+      "val_r2": 0.9180655074340721,
+      "train_rmse": 0.542620537692682,
+      "val_rmse": 1.5548682939492005
+    },
+    {
+      "model_name": "ridge",
+      "train_r2": 0.8962917832120046,
+      "val_r2": 0.8801074694019867,
+      "train_rmse": 1.7271518517023485,
+      "val_rmse": 1.880859205754514
+    },
+    {
+      "model_name": "mlp",
+      "train_r2": 0.9823123651472907,
+      "val_r2": 0.8959057965737949,
+      "train_rmse": 0.7132779869618552,
+      "val_rmse": 1.752562426792379
+    },
+    {
+      "model_name": "svr",
+      "train_r2": 0.8698818875617758,
+      "val_r2": 0.8358349214859011,
+      "train_rmse": 1.9346072741720919,
+      "val_rmse": 2.2009015329530257
+    }
+  ],
+  "flaml_available": true,
+  "flaml_results": {
+    "automl_model": "AutoML(append_log=False, auto_augment=True, custom_hp={},\n       cv_score_agg_func=None, early_stop=False, ensemble=False,\n       estimator_list='auto', eval_method='auto', fit_kwargs_by_estimator={},\n       force_cancel=False, free_mem_ratio=0, hpo_method='auto',\n       keep_search_state=False, learner_selector='sample', log_file_name='',\n       log_training_metric=False, log_type='better', max_iter=None,\n       mem_thres=4294967296, metric='auto', metric_constraints=[],\n       min_sample_size=10000, mlflow_exp_name=None, mlflow_logging=True,\n       model_history=False, n_concurrent_trials=1, n_jobs=-1, n_splits=5,\n       pred_time_limit=inf, preserve_checkpoint=True, ...)",
+    "best_estimator": "lgbm",
+    "best_config": {
+      "n_estimators": 86,
+      "num_leaves": 21,
+      "min_child_samples": 3,
+      "learning_rate": 0.10960516614832329,
+      "log_max_bin": 8,
+      "colsample_bytree": 0.9743381896390885,
+      "reg_alpha": 0.09105575636745025,
+      "reg_lambda": 0.007887604254608733
+    },
+    "val_score": 0.9215385663742599
+  },
+  "test_results": {
+    "test_r2": 0.29468369107942005,
+    "test_rmse": 4.6900080995942055
+  },
+  "data_info": {
+    "n_features": 30,
+    "train_samples": 657,
+    "val_samples": 220,
+    "test_samples": 220
+  }
+}

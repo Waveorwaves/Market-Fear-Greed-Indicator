@@ -48,9 +48,10 @@ class FearGreedAutoML:
     """
     
     def __init__(self, models_dir: str = "models", results_dir: str = "results"):
-        # Set up paths relative to project root
-        self.project_root = Path(__file__).parent.parent
+        # Set up paths relative to current directory (Market-Fear-Greed-Indicator)
+        self.project_root = Path(__file__).parent
         self.data_dir = self.project_root / "data"
+        self.feature_store_dir = self.project_root / "feature_store"
         
         self.models_dir = Path(models_dir)
         self.results_dir = Path(results_dir)
@@ -70,10 +71,10 @@ class FearGreedAutoML:
         self.experiment_results = []
     
     def _load_feature_summary(self):
-        """Load feature summary from processed data"""
-        summary_file = self.data_dir / "feature_pipeline_summary.json"
+        """Load feature summary from feature store"""
+        summary_file = self.feature_store_dir / "feature_pipeline_summary.json"
         if not summary_file.exists():
-            raise FileNotFoundError("Feature summary not found. Run fixed_feature_store.py first.")
+            raise FileNotFoundError("Feature summary not found. Run feature store setup first.")
         
         with open(summary_file, 'r') as f:
             self.feature_summary = json.load(f)
@@ -124,7 +125,7 @@ class FearGreedAutoML:
         local_name = version_info['local_name']
         feature_columns = version_info['features']
         
-        data_file = self.data_dir / f"{local_name}.parquet"
+        data_file = self.feature_store_dir / f"{local_name}.parquet"
         if not data_file.exists():
             raise FileNotFoundError(f"Data file not found: {data_file}")
         
