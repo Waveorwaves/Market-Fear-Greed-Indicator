@@ -23,21 +23,15 @@ Predicts market sentiment (Fear/Greed/Stable) and VIX values using three feature
 
 *Note: Original notebook approach used **Histogram Gradient Boosting (HGB)** which also performed excellently*
 
-## 🔧 Key Files
 
-- `Market_Fear_Greed_Indicator_Model.ipynb` - Original modeling (HGB focus)
-- `automl_integration.py` - AutoML pipeline
-- `feature_store_setup.py` - Feature engineering
-- `../Integrated_Fear_Greed_AutoML_Pipeline.ipynb` - Complete pipeline
-
-## 🚀 Quick Start
+## Quick Start
 
 ```python
-# Run integrated pipeline
-jupyter notebook ../Integrated_Fear_Greed_AutoML_Pipeline.ipynb
+# Feature Engineering
+1. Market_Fear_Greed_Indicator_Model.ipynb
 
-# Or run original approach
-jupyter notebook Market_Fear_Greed_Indicator_Model.ipynb
+# Feature store & AutoML
+2. FearGreed_Featurestore_AutoML.ipynb
 ```
 
 ## 📈 Key Insights
