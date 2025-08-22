@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-08-21T20:56:42.396335",
+  "model_performance": {
+    "v1_classification": {
+      "accuracy": 0.0,
+      "samples": 220,
+      "model_file": "best_v1_classification_20250820_192012.joblib",
+      "prediction_distribution": {
+        "2": 212,
+        "0": 8
+      }
+    },
+    "v1_regression": {
+      "r2_score": -0.2822100964040961,
+      "rmse": 6.342774189550088,
+      "samples": 220,
+      "model_file": "best_v1_regression_20250820_192323.joblib"
+    },
+    "v2_regression": {
+      "r2_score": -0.1116735925662613,
+      "rmse": 5.905930048438744,
+      "samples": 220,
+      "model_file": "best_v2_regression_20250820_192930.joblib"
+    }
+  },
+  "model_comparison": {}
+}
